@@ -81,7 +81,7 @@ class build_ext(distutils.command.build_ext.build_ext):
                 extraArgs.append("-mwindows")
         else:
             vars = distutils.sysconfig.get_config_vars()
-            if not vars.get("Py_ENABLE_SHARED", 0):
+            if True:  # fixed per https://bitbucket.org/anthony_tuininga/cx_freeze/ issue 32
                 libraryDirs.append(vars["LIBPL"])
                 libraries.append("python%s.%s" % sys.version_info[:2])
                 if vars["LINKFORSHARED"] and sys.platform != "darwin":
