@@ -72,6 +72,7 @@ def initialize(finder):
         finder.ExcludeModule("Tkinter")
     else:
         finder.ExcludeModule("tkinter")
+        finder.ExcludeModule("Tkinter")
 
 
 def load_cElementTree(finder, module):
