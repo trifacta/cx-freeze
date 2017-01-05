@@ -435,7 +435,7 @@ def _qt_implementation(module):
 
 def copy_qt_plugins(plugins, finder, QtCore):
     """Helper function to find and copy Qt plugins."""
-    
+
     # Qt Plugins can either be in a plugins directory next to the Qt libraries,
     # or in other locations listed by QCoreApplication.libraryPaths()
     dir0 = os.path.join(os.path.dirname(QtCore.__file__), "plugins")
@@ -546,7 +546,7 @@ def load_scipy(finder, module):
     """the scipy module loads items within itself in a way that causes
        problems without the entire package and a number of other subpackages
        being present."""
-    finder.IncludePackage("scipy.lib")
+    finder.IncludePackage("scipy._lib")
     finder.IncludePackage("scipy.misc")
 
 
